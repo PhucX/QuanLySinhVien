@@ -19,18 +19,27 @@ namespace ToDoList
 
         private void bntDangNhap_Click(object sender, EventArgs e)
         {
-            if (txbMatKhau.Text == "" || txbTaiKhoan.Text == "")
+            string taikhoan = "anh";
+            string matkhau = "anhquan";
+            if (txbMatKhau.Text != "anhquan" && txbTaiKhoan.Text != "anh")
             {
                 MessageBox.Show("Tài khoản hay mật khẩu không hợp lệ" +
                 " !","Cảnh báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
+                MessageBox.Show("Đăng nhập thành công" +
+               " !", "Confirm", MessageBoxButtons.OK, MessageBoxIcon.None);
                 fQuanLySinhVien quanLySinhVien = new fQuanLySinhVien();
                 this.Hide();
                 quanLySinhVien.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void txbTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

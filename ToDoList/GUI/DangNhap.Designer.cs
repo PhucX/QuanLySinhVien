@@ -41,23 +41,24 @@
             this.label1.Location = new System.Drawing.Point(90, 62);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 19);
+            this.label1.Size = new System.Drawing.Size(93, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tài Khoản";
             // 
             // txbTaiKhoan
             // 
-            this.txbTaiKhoan.Location = new System.Drawing.Point(170, 55);
+            this.txbTaiKhoan.Location = new System.Drawing.Point(170, 59);
             this.txbTaiKhoan.Name = "txbTaiKhoan";
-            this.txbTaiKhoan.Size = new System.Drawing.Size(164, 26);
+            this.txbTaiKhoan.Size = new System.Drawing.Size(164, 30);
             this.txbTaiKhoan.TabIndex = 0;
             this.txbTaiKhoan.Tag = "";
+            this.txbTaiKhoan.TextChanged += new System.EventHandler(this.txbTaiKhoan_TextChanged);
             // 
             // txbMatKhau
             // 
             this.txbMatKhau.Location = new System.Drawing.Point(170, 111);
             this.txbMatKhau.Name = "txbMatKhau";
-            this.txbMatKhau.Size = new System.Drawing.Size(164, 26);
+            this.txbMatKhau.Size = new System.Drawing.Size(164, 30);
             this.txbMatKhau.TabIndex = 1;
             this.txbMatKhau.UseSystemPasswordChar = true;
             // 
@@ -67,7 +68,7 @@
             this.label2.Location = new System.Drawing.Point(90, 118);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 19);
+            this.label2.Size = new System.Drawing.Size(87, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mật Khẩu";
             // 
@@ -84,7 +85,7 @@
             // fDangNhap
             // 
             this.AcceptButton = this.bntDangNhap;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 234);
             this.Controls.Add(this.txbMatKhau);
