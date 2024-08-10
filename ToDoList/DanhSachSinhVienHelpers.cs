@@ -1,4 +1,4 @@
-﻿using ToDoList;
+﻿using QuanLySinhVien;
 
 internal static class DanhSachSinhVienHelpers
 {

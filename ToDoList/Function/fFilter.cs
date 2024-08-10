@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ToDoList
+namespace QuanLySinhVien
 {
-    public class fSorted
+    public class fFilter
     {
         StringComparer comparer;
         private string GetFirstName(string fullname)

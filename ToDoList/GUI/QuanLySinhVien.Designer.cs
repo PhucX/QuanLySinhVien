@@ -1,4 +1,4 @@
-﻿namespace ToDoList
+﻿namespace QuanLySinhVien
 {
     partial class fQuanLySinhVien
     {
@@ -154,15 +154,10 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(698, 16);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-<<<<<<< HEAD
-            this.dateTimePicker1.Size = new System.Drawing.Size(163, 30);
-=======
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePicker1.Size = new System.Drawing.Size(147, 30);
->>>>>>> e49eabf4580300f5d876d0381a6b57ad909ac2ea
             this.dateTimePicker1.TabIndex = 2;
             this.dateTimePicker1.Value = new System.DateTime(2024, 8, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // txbQueQuan
             // 
@@ -202,11 +197,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-<<<<<<< HEAD
-            this.panel1.Size = new System.Drawing.Size(870, 98);
-=======
             this.panel1.Size = new System.Drawing.Size(870, 93);
->>>>>>> e49eabf4580300f5d876d0381a6b57ad909ac2ea
             this.panel1.TabIndex = 15;
             // 
             // menuStrip1
@@ -249,11 +240,7 @@
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-<<<<<<< HEAD
             this.thoátToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-=======
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
->>>>>>> e49eabf4580300f5d876d0381a6b57ad909ac2ea
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
@@ -266,13 +253,8 @@
             // thôngTinToolStripMenuItem
             // 
             this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-<<<<<<< HEAD
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
-            this.thôngTinToolStripMenuItem.Text = "Thông tin phần mền";
-=======
             this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
             this.thôngTinToolStripMenuItem.Text = "Thông tin phần mềm";
->>>>>>> e49eabf4580300f5d876d0381a6b57ad909ac2ea
             // 
             // btnThem
             // 
@@ -326,19 +308,11 @@
             // 
             this.dtgvSinhVien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
-            this.dtgvSinhVien.Location = new System.Drawing.Point(0, 117);
-            this.dtgvSinhVien.Name = "dtgvSinhVien";
-            this.dtgvSinhVien.RowHeadersWidth = 51;
-            this.dtgvSinhVien.Size = new System.Drawing.Size(682, 308);
-=======
             this.dtgvSinhVien.Location = new System.Drawing.Point(0, 124);
-            this.dtgvSinhVien.MultiSelect = false;
             this.dtgvSinhVien.Name = "dtgvSinhVien";
             this.dtgvSinhVien.ReadOnly = true;
             this.dtgvSinhVien.RowHeadersWidth = 51;
             this.dtgvSinhVien.Size = new System.Drawing.Size(682, 301);
->>>>>>> e49eabf4580300f5d876d0381a6b57ad909ac2ea
             this.dtgvSinhVien.TabIndex = 22;
             this.dtgvSinhVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvSinhVien_CellClick);
             this.dtgvSinhVien.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgvSinhVien_ColumnHeaderMouseClick);

@@ -148,7 +148,7 @@
     <Compile Include="DanhSachSinhVien.cs" />
     <Compile Include="DanhSachSinhVienHelpers.cs" />
     <Compile Include="Function\fRemoveElement.cs" />
-    <Compile Include="Function\fSorted.cs" />
+    <Compile Include="Function\fFilter.cs" />
     <Compile Include="GUI\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -12,7 +12,7 @@ using ClosedXML.Excel;
 using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml.Wordprocessing;
 
-namespace ToDoList
+namespace QuanLySinhVien
 {
     public partial class fQuanLySinhVien : Form
     {
@@ -243,7 +243,7 @@ namespace ToDoList
                 Title = "Select an Excel File"
             };
 
-<<<<<<< HEAD
+
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 new fImportData().ImportData(openFileDialog.FileName);
@@ -255,7 +255,7 @@ namespace ToDoList
         {
             if (DanhSachSinhVien.Instance.ListSinhVien.Count > 0)
             {
-                fSorted filterData = new fSorted();
+                fFilter filterData = new fFilter();
                 if (e.ColumnIndex == 0)
                     DanhSachSinhVien.Instance.ListSinhVien = DanhSachSinhVien.Instance.ListSinhVien.OrderBy(time => time.DInputTime).ToList();
                 else
@@ -280,20 +280,6 @@ namespace ToDoList
             }
             else
                 MessageBox.Show("Không có dữ liệu", "Cảnh báo");
-=======
-
-
-
-
-
-
-
-        #endregion
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
->>>>>>> e49eabf4580300f5d876d0381a6b57ad909ac2ea
         }
     }
             #endregion

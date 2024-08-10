@@ -1,4 +1,4 @@
-﻿namespace ToDoList
+﻿namespace QuanLySinhVien
 {
     partial class fDangNhap
     {
