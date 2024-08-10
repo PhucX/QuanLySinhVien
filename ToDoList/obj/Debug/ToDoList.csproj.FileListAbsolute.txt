@@ -9,3 +9,14 @@ D:\Lap_Trinh\C#\ToDoList\ToDoList\obj\Debug\ToDoList.csproj.GenerateResource.cac
 D:\Lap_Trinh\C#\ToDoList\ToDoList\obj\Debug\ToDoList.csproj.CoreCompileInputs.cache
 D:\Lap_Trinh\C#\ToDoList\ToDoList\obj\Debug\ToDoList.exe
 D:\Lap_Trinh\C#\ToDoList\ToDoList\obj\Debug\ToDoList.pdb
+C:\Users\ADMIN\Source\Repos\QuanLySinhVien\ToDoList\bin\Debug\ToDoList.exe.config
+C:\Users\ADMIN\Source\Repos\QuanLySinhVien\ToDoList\bin\Debug\ToDoList.exe
+C:\Users\ADMIN\Source\Repos\QuanLySinhVien\ToDoList\bin\Debug\ToDoList.pdb
+C:\Users\ADMIN\Source\Repos\QuanLySinhVien\ToDoList\obj\Debug\ToDoList.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Source\Repos\QuanLySinhVien\ToDoList\obj\Debug\ToDoList.fDangNhap.resources
+C:\Users\ADMIN\Source\Repos\QuanLySinhVien\ToDoList\obj\Debug\ToDoList.fQuanLySinhVien.resources
+C:\Users\ADMIN\Source\Repos\QuanLySinhVien\ToDoList\obj\Debug\ToDoList.Properties.Resources.resources
+C:\Users\ADMIN\Source\Repos\QuanLySinhVien\ToDoList\obj\Debug\ToDoList.csproj.GenerateResource.cache
+C:\Users\ADMIN\Source\Repos\QuanLySinhVien\ToDoList\obj\Debug\ToDoList.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Source\Repos\QuanLySinhVien\ToDoList\obj\Debug\ToDoList.exe
+C:\Users\ADMIN\Source\Repos\QuanLySinhVien\ToDoList\obj\Debug\ToDoList.pdb

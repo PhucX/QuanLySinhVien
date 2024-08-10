@@ -243,6 +243,7 @@ namespace ToDoList
                 Title = "Select an Excel File"
             };
 
+<<<<<<< HEAD
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 new fImportData().ImportData(openFileDialog.FileName);
@@ -279,6 +280,20 @@ namespace ToDoList
             }
             else
                 MessageBox.Show("Không có dữ liệu", "Cảnh báo");
+=======
+
+
+
+
+
+
+
+        #endregion
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+>>>>>>> e49eabf4580300f5d876d0381a6b57ad909ac2ea
         }
     }
             #endregion

@@ -19,13 +19,16 @@ namespace ToDoList
 
         private void bntDangNhap_Click(object sender, EventArgs e)
         {
-            if (txbMatKhau.Text == "" || txbTaiKhoan.Text == "")
+            string taikhoan = "anh";
+            string matkhau = "anhquan";
+            if (txbMatKhau.Text != "anhquan" && txbTaiKhoan.Text != "anh")
             {
                 MessageBox.Show("Tài khoản hay mật khẩu không hợp lệ" +
                 " !","Cảnh báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
+<<<<<<< HEAD
                 if (txbMatKhau.Text != "anhquan" || txbTaiKhoan.Text != "anh")
                 {
                     MessageBox.Show("Tài khoản hay mật khẩu không hợp lệ" + " !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -37,7 +40,20 @@ namespace ToDoList
                     new fQuanLySinhVien().ShowDialog();
                     this.Close();
                 }
+=======
+                MessageBox.Show("Đăng nhập thành công" +
+               " !", "Confirm", MessageBoxButtons.OK, MessageBoxIcon.None);
+                fQuanLySinhVien quanLySinhVien = new fQuanLySinhVien();
+                this.Hide();
+                quanLySinhVien.ShowDialog();
+                this.Close();
+>>>>>>> e49eabf4580300f5d876d0381a6b57ad909ac2ea
             }
+        }
+
+        private void txbTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
