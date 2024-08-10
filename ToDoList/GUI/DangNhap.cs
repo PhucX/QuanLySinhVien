@@ -26,10 +26,17 @@ namespace ToDoList
             }
             else
             {
-                fQuanLySinhVien quanLySinhVien = new fQuanLySinhVien();
-                this.Hide();
-                quanLySinhVien.ShowDialog();
-                this.Close();
+                if (txbMatKhau.Text != "anhquan" || txbTaiKhoan.Text != "anh")
+                {
+                    MessageBox.Show("Tài khoản hay mật khẩu không hợp lệ" + " !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập thành công" + " ! ", "Confirm", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.Hide();
+                    new fQuanLySinhVien().ShowDialog();
+                    this.Close();
+                }
             }
         }
     }

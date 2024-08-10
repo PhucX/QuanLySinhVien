@@ -3,40 +3,47 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace ToDoList
 {
     public partial class fQuanLySinhVien : Form
     {
         string status = "";
-        int index = -1;
-
+        int index = -1, sort_order = 1;
        
         #region Method
         void CreateForColumnDataGridView()
         {
-            var colTenSV = new DataGridViewTextBoxColumn();
+            var colInputTime = new DataGridViewTextBoxColumn();
             var colMaSV = new DataGridViewTextBoxColumn();
-            var colQueQuan = new DataGridViewTextBoxColumn();
+            var colTenSV = new DataGridViewTextBoxColumn();
             var colGioiTinh = new DataGridViewTextBoxColumn();
             var colNgaySinh = new DataGridViewTextBoxColumn();
+            var colQueQuan = new DataGridViewTextBoxColumn();
 
+            colInputTime.HeaderText = "Thời gian nhập";
             colTenSV.HeaderText = "TÊN SINH VIÊN";
             colMaSV.HeaderText = "MÃ SINH VIÊN";
-            colQueQuan.HeaderText = "QUÊ QUÁN";
             colGioiTinh.HeaderText = "GIỚI TÍNH";
             colNgaySinh.HeaderText = "NGÀY SINH";
+            colQueQuan.HeaderText = "QUÊ QUÁN";
 
+            colInputTime.DataPropertyName = "DInputTime";
             colMaSV.DataPropertyName = "StrMaSV";
             colTenSV.DataPropertyName = "StrTenSV";
+            colGioiTinh.DataPropertyName = "StrGioiTinh";
             colNgaySinh.DataPropertyName = "DNgaySinh";
             colQueQuan.DataPropertyName = "StrQueQuan";
-            colGioiTinh.DataPropertyName = "StrGioiTinh";
 
+            colInputTime.Width = 140;
             colGioiTinh.Width = 120;
             colQueQuan.Width = 120;
             colMaSV.Width = 145;
@@ -47,13 +54,13 @@ namespace ToDoList
 
 
 
-            dtgvSinhVien.Columns.AddRange(new DataGridViewColumn[] {colMaSV,colTenSV,colGioiTinh,colNgaySinh,colQueQuan});
-
-
+            dtgvSinhVien.Columns.AddRange(new DataGridViewColumn[] { colInputTime, colMaSV, colTenSV, colGioiTinh, colNgaySinh, colQueQuan });
         }
         void LoadlistSinhVien()
         {
             dtgvSinhVien.DataSource = null;
+            dtgvSinhVien.Rows.Clear();
+            dtgvSinhVien.Columns.Clear();
             CreateForColumnDataGridView();
             dtgvSinhVien.DataSource = DanhSachSinhVien.Instance.ListSinhVien;
             dtgvSinhVien.Refresh();
@@ -61,7 +68,6 @@ namespace ToDoList
         public fQuanLySinhVien()
         {
             InitializeComponent();
-
         }
         void EnablePanel2(bool them, bool xoa, bool sua, bool luu, bool huy)
         {
@@ -86,32 +92,36 @@ namespace ToDoList
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
             if (index < 0)
             {
-                MessageBox.Show("Vui lòng chọn sinh viên muốn xoá !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn sinh viên muốn xoá !", "Cảnh báo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
             {
-                MessageBox.Show("Bạn có chắc chắn xóa ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (MessageBox.Show("Bạn có chắc chắn xóa ?", "Cảnh báo",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    new fRemoveElement().removeElement(dtgvSinhVien);
+                    LoadlistSinhVien();
+                }
             }
-            DanhSachSinhVien.Instance.ListSinhVien.RemoveAt(index);
-            LoadlistSinhVien();
         }
         private void fQuanLySinhVien_Load(object sender, EventArgs e)
         {
             EnablePanel2(true, true, true, false, false);
             EnableControls(false,true);
-            LoadlistSinhVien();
+            CreateForColumnDataGridView();
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             EnablePanel2(true, true, true, true,true);
-            string TenSV = txbTenSV.Text;
-            string QueQuan = txbQueQuan.Text;
-            string MaSV = txbMaSV.Text;
+            string TenSV = txbTenSV.Text.ToString();
+            string QueQuan = txbQueQuan.Text.ToString();
+            string MaSV = txbMaSV.Text.ToString();
             DateTime NgaySinh = dateTimePicker1.Value;
+            DateTime InputTime = DateTime.Now;
             string GioiTinh = "";
             if (radioButton2.Checked)
             {
@@ -124,7 +134,7 @@ namespace ToDoList
 
             if (status == "them")
             {
-                DanhSachSinhVien.Instance.ListSinhVien.Add(new SinhVien(MaSV, NgaySinh, GioiTinh, QueQuan, TenSV));
+                DanhSachSinhVien.Instance.ListSinhVien.Add(new SinhVien(InputTime, MaSV, QueQuan, GioiTinh, NgaySinh, GioiTinh));
             }
 
             if (status == "sua")
@@ -193,6 +203,7 @@ namespace ToDoList
             EnablePanel2(true, false, false, true, true) ;
             EnableControls(true, false);
             status = "them";
+            btnThem.Enabled = false;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -205,21 +216,70 @@ namespace ToDoList
             EnableControls(false, true);
             EnablePanel2(true, true, true, false,false) ;
         }
+
         private void dtgvSinhVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
         }
+        private void xuấtDữLiệuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "Excel Workbook|*.xlsx",
+                Title = "Save an Excel File"
+            };
 
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                new fExportData().ExportData(dtgvSinhVien, saveFileDialog.FileName);
+            }
+        }
 
+        private void thêmDữLiệuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Excel Workbook|*.xlsx",
+                Title = "Select an Excel File"
+            };
 
-        #endregion
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                new fImportData().ImportData(openFileDialog.FileName);
+                LoadlistSinhVien();
+            }
+        }
 
-
-
-
-
-
-
-
+        public void dtgvSinhVien_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (DanhSachSinhVien.Instance.ListSinhVien.Count > 0)
+            {
+                fSorted filterData = new fSorted();
+                if (e.ColumnIndex == 0)
+                    DanhSachSinhVien.Instance.ListSinhVien = DanhSachSinhVien.Instance.ListSinhVien.OrderBy(time => time.DInputTime).ToList();
+                else
+                {
+                    if (sort_order == 1)
+                    {
+                        filterData.Sorted_Increase(sender, e);
+                        sort_order = 2;
+                    }
+                    else if (sort_order == 2)
+                    {
+                        filterData.Sorted_Decrease(sender, e);
+                        sort_order = 0;
+                    }
+                    else if (sort_order == 0)
+                    {
+                        sort_order = 1;
+                        DanhSachSinhVien.Instance.ListSinhVien = DanhSachSinhVien.Instance.ListSinhVien.OrderBy(time => time.DInputTime).ToList();
+                    }
+                }
+                LoadlistSinhVien();
+            }
+            else
+                MessageBox.Show("Không có dữ liệu", "Cảnh báo");
+        }
     }
+            #endregion
 }
