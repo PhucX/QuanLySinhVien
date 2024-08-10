@@ -354,6 +354,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "fQuanLySinhVien";
             this.Text = "Quản Lý Sinh Viên";
             this.Load += new System.EventHandler(this.fQuanLySinhVien_Load);
