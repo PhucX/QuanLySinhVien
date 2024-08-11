@@ -37,22 +37,5 @@ namespace QuanLySinhVien
             StrTenSV = strTenSV;
             DInputTime = dInputTime;
         }
-        public override bool Equals(object obj)
-        {
-            if (obj is SinhVien sv)
-            {
-                return DInputTime == sv.DInputTime &&
-                       StrMaSV == sv.StrMaSV &&
-                       StrTenSV == sv.StrTenSV &&
-                       StrGioiTinh == sv.StrGioiTinh &&
-                       DNgaySinh == sv.DNgaySinh &&
-                       StrQueQuan == sv.StrQueQuan;
-            }
-            return false;
-        }
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(DInputTime, StrMaSV, StrTenSV, StrGioiTinh, DNgaySinh, StrQueQuan);
-        }
     }
 }

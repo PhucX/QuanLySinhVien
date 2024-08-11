@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "D:\\QuanLySinhVien\\QuanLySinhVien\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|D:\\QuanLySinhVien\\QuanLySinhVien\\gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|d:\\quanlysinhvien\\quanlysinhvien\\gui\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:gui\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|d:\\quanlysinhvien\\quanlysinhvien\\gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|d:\\quanlysinhvien\\quanlysinhvien\\class\\sinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:class\\sinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,40 +50,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DangNhap.cs [Design]",
-              "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\DangNhap.cs",
-              "RelativeDocumentMoniker": "GUI\\DangNhap.cs",
-              "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\DangNhap.cs [Design]",
-              "RelativeToolTip": "GUI\\DangNhap.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T15:20:48.358Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "QuanLySinhVien.cs",
-              "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs",
-              "RelativeDocumentMoniker": "GUI\\QuanLySinhVien.cs",
-              "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs",
-              "RelativeToolTip": "GUI\\QuanLySinhVien.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAcwHkAAAAyAAAA",
+              "Title": "SinhVien.cs",
+              "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\Class\\SinhVien.cs",
+              "RelativeDocumentMoniker": "Class\\SinhVien.cs",
+              "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\Class\\SinhVien.cs",
+              "RelativeToolTip": "Class\\SinhVien.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAA0wCYAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T13:41:52.805Z",
+              "WhenOpened": "2024-08-11T15:31:07.618Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "QuanLySinhVien.cs [Design]",
-              "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs",
-              "RelativeDocumentMoniker": "GUI\\QuanLySinhVien.cs",
-              "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs [Design]",
-              "RelativeToolTip": "GUI\\QuanLySinhVien.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-10T05:47:49.447Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }
