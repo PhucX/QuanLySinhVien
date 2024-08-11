@@ -42,13 +42,13 @@
             this.label1.Location = new System.Drawing.Point(90, 62);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 22);
+            this.label1.Size = new System.Drawing.Size(99, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tài Khoản";
+            this.label1.Text = "Tài Khoản:";
             // 
             // txbTaiKhoan
             // 
-            this.txbTaiKhoan.Location = new System.Drawing.Point(170, 59);
+            this.txbTaiKhoan.Location = new System.Drawing.Point(190, 59);
             this.txbTaiKhoan.Name = "txbTaiKhoan";
             this.txbTaiKhoan.Size = new System.Drawing.Size(164, 30);
             this.txbTaiKhoan.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // txbMatKhau
             // 
-            this.txbMatKhau.Location = new System.Drawing.Point(170, 111);
+            this.txbMatKhau.Location = new System.Drawing.Point(190, 111);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.Size = new System.Drawing.Size(164, 30);
             this.txbMatKhau.TabIndex = 1;
@@ -65,12 +65,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(90, 118);
+            this.label2.Location = new System.Drawing.Point(93, 118);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 22);
+            this.label2.Size = new System.Drawing.Size(93, 22);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Mật Khẩu";
+            this.label2.Text = "Mật Khẩu:";
             // 
             // bntDangNhap
             // 
@@ -94,8 +94,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bntDangNhap);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "fDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
