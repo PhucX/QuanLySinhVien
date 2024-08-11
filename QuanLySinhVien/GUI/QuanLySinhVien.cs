@@ -123,11 +123,18 @@ namespace QuanLySinhVien
             DateTime NgaySinh = dateTimePicker1.Value;
             DateTime InputTime = DateTime.Now;
             string GioiTinh = "";
-            if (radioButton2.Checked)
+            bool isBoy = radioButton2.Checked, isGirl = radioButton3.Checked;
+
+            if(!(new fCheckedFormat().checkedInsideBox(isBoy, isGirl, MaSV, TenSV, QueQuan)))
+            {
+                EnablePanel2(false, false, false, true, true);
+                return;
+            }
+            if (isBoy)
             {
                 GioiTinh = radioButton2.Text;
             }
-            else if (radioButton3.Checked)
+            else if (isGirl)
             {
                 GioiTinh = radioButton3.Text;
             }
@@ -154,6 +161,7 @@ namespace QuanLySinhVien
                 DanhSachSinhVien.Instance.ListSinhVien[index].StrQueQuan = txbQueQuan.Text;
                 DanhSachSinhVien.Instance.ListSinhVien[index].StrGioiTinh = GioiTinh;
             }
+
             txbMaSV.Text = "";
             txbQueQuan.Text = "";
             txbTenSV.Text = "";

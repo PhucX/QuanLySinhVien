@@ -143,6 +143,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Function\fCheckedFormat.cs" />
     <Compile Include="Function\fExportData.cs" />
     <Compile Include="Function\fImportData.cs" />
     <Compile Include="Class\DanhSachSinhVien.cs" />

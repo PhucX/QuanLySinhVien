@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDangNhap));
             this.label1 = new System.Windows.Forms.Label();
             this.txbTaiKhoan = new System.Windows.Forms.TextBox();
             this.txbMatKhau = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@
             this.txbTaiKhoan.Size = new System.Drawing.Size(164, 30);
             this.txbTaiKhoan.TabIndex = 0;
             this.txbTaiKhoan.Tag = "";
-            this.txbTaiKhoan.TextChanged += new System.EventHandler(this.txbTaiKhoan_TextChanged);
             // 
             // txbMatKhau
             // 
@@ -94,6 +94,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bntDangNhap);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
