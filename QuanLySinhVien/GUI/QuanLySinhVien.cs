@@ -238,7 +238,7 @@ namespace QuanLySinhVien
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                new fExportData().ExportData(dtgvSinhVien, saveFileDialog.FileName);
+                new fExportAndImportData().ExportData(dtgvSinhVien, saveFileDialog.FileName);
             }
         }
 
@@ -252,7 +252,7 @@ namespace QuanLySinhVien
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                new fImportData().ImportData(openFileDialog.FileName);
+                new fExportAndImportData().ImportData(openFileDialog.FileName);
                 LoadlistSinhVien();
             }
         }

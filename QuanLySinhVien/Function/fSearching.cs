@@ -16,7 +16,7 @@ namespace QuanLySinhVien
                 dtgvSinhVien.DataSource = DanhSachSinhVien.Instance.ListSinhVien;
             else
             {
-                var filteredList = DanhSachSinhVien.Instance.ListSinhVien
+                List<SinhVien> filteredList = DanhSachSinhVien.Instance.ListSinhVien
                        .Where(p => p.StrTenSV.ToLower().Contains(filterText)
                               || p.StrMaSV.Contains(filterText))
                        .ToList();

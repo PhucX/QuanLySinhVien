@@ -144,8 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Function\fCheckedFormat.cs" />
-    <Compile Include="Function\fExportData.cs" />
-    <Compile Include="Function\fImportData.cs" />
+    <Compile Include="Function\fExportAndImportData.cs" />
     <Compile Include="Class\DanhSachSinhVien.cs" />
     <Compile Include="DanhSachSinhVienHelpers.cs" />
     <Compile Include="Function\fRemoveElement.cs" />
