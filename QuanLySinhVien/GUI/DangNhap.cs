@@ -32,5 +32,15 @@ namespace QuanLySinhVien
                 this.Close();
             }
         }
+
+        private void fDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,6 +41,7 @@
             this.txbQueQuan = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.dtgvSinhVien = new System.Windows.Forms.DataGridView();
             this.txbSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -54,7 +55,6 @@
             this.thêmDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xuấtDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSinhVien)).BeginInit();
             this.panel2.SuspendLayout();
@@ -199,11 +199,20 @@
             this.panel1.Controls.Add(this.txbMaSV);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1034, 511);
             this.panel1.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(702, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 22);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Tìm kiếm:";
             // 
             // dtgvSinhVien
             // 
@@ -308,7 +317,7 @@
             this.hệThốngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1034, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1034, 30);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -345,15 +354,6 @@
             this.thoátToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(702, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 22);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Tìm kiếm:";
             // 
             // fQuanLySinhVien
             // 
