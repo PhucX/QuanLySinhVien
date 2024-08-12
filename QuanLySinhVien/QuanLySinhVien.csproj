@@ -150,6 +150,7 @@
     <Compile Include="DanhSachSinhVienHelpers.cs" />
     <Compile Include="Function\fRemoveElement.cs" />
     <Compile Include="Function\fFilter.cs" />
+    <Compile Include="Function\fSearching.cs" />
     <Compile Include="GUI\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>

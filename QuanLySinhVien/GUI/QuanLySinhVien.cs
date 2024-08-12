@@ -123,25 +123,24 @@ namespace QuanLySinhVien
             DateTime NgaySinh = dateTimePicker1.Value;
             DateTime InputTime = DateTime.Now;
             string GioiTinh = "";
-            bool isBoy = radioButton2.Checked, isGirl = radioButton3.Checked;
 
-            if(!(new fCheckedFormat().checkedInsideBox(isBoy, isGirl, MaSV, TenSV, QueQuan)))
+            if (!(new fCheckedFormat().checkedInsideBox(radioButton2.Checked, radioButton3.Checked, MaSV, TenSV, QueQuan)))
             {
                 EnablePanel2(false, false, false, true, true);
                 return;
             }
-            if (isBoy)
+            if (radioButton2.Checked)
             {
                 GioiTinh = radioButton2.Text;
             }
-            else if (isGirl)
+            else if (radioButton3.Checked)
             {
                 GioiTinh = radioButton3.Text;
             }
 
             if (status == "them")
             {
-                DanhSachSinhVien.Instance.ListSinhVien.Add(new SinhVien(InputTime, MaSV, QueQuan, GioiTinh, NgaySinh, GioiTinh));
+                DanhSachSinhVien.Instance.ListSinhVien.Add(new SinhVien(InputTime, MaSV, TenSV, GioiTinh, NgaySinh, QueQuan));
             }
 
             if (status == "sua")
@@ -256,6 +255,11 @@ namespace QuanLySinhVien
                 new fImportData().ImportData(openFileDialog.FileName);
                 LoadlistSinhVien();
             }
+        }
+
+        private void txbSearch_TextChanged(object sender, EventArgs e)
+        {
+            new fSearching().searchingInfo(ref dtgvSinhVien, txbSearch.Text.ToLower());
         }
 
         public void dtgvSinhVien_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\QuanLySinhVien\\QuanLySinhVien\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|d:\\quanlysinhvien\\quanlysinhvien\\gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|d:\\quanlysinhvien\\quanlysinhvien\\gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,6 +51,35 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QuanLySinhVien.cs",
+              "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs",
+              "RelativeDocumentMoniker": "GUI\\QuanLySinhVien.cs",
+              "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs",
+              "RelativeToolTip": "GUI\\QuanLySinhVien.cs",
+              "ViewState": "AQIAAP0AAAAAAAAAAAAMwAgBAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T04:10:39.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QuanLySinhVien.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs",
+              "RelativeDocumentMoniker": "GUI\\QuanLySinhVien.cs",
+              "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs [Design]",
+              "RelativeToolTip": "GUI\\QuanLySinhVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T04:00:39.929Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
