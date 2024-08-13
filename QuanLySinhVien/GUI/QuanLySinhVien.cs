@@ -260,6 +260,7 @@ namespace QuanLySinhVien
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                new DataManager(new ExcelImporter()).ImportData(openFileDialog.FileName);
                 LoadlistSinhVien();
             }
         }
