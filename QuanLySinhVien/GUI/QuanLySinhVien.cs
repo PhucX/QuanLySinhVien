@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using ClosedXML.Excel;
 using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System.IO;
 
 namespace QuanLySinhVien
 {
@@ -68,6 +69,13 @@ namespace QuanLySinhVien
         public fQuanLySinhVien()
         {
             InitializeComponent();
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"data.xlsx");
+
+            if(File.Exists(filePath))
+            {
+                new DataManager(new ExcelImporter()).ImportData(filePath);
+                LoadlistSinhVien();
+            }    
         }
         void EnablePanel2(bool them, bool xoa, bool sua, bool luu, bool huy)
         {
@@ -238,7 +246,6 @@ namespace QuanLySinhVien
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"data.xlsx");
                 new DataManager(new ExcelExporter()).ExportData(dtgvSinhVien, saveFileDialog.FileName);
             }
         }
@@ -282,6 +289,7 @@ namespace QuanLySinhVien
             if (DanhSachSinhVien.Instance.ListSinhVien.Count > 0)
             {
                 List <SinhVien> sinhVien = DanhSachSinhVien.Instance.ListSinhVien;
+
                 FilterManager filterManager = new FilterManager();
                 if(e.ColumnIndex == 0)
                 {
@@ -318,10 +326,8 @@ namespace QuanLySinhVien
                     {
                     filterManager.SetFilterManager(new SortByInputTime());
                     filterManager.SortAscending(ref sinhVien);
-                        sort_order = 1;
-                        DanhSachSinhVien.Instance.ListSinhVien = DanhSachSinhVien.Instance.ListSinhVien.OrderBy(time => time.DInputTime).ToList();
+                     sort_order = 1;
                     }
-                }
                 DanhSachSinhVien.Instance.ListSinhVien = sinhVien;
                 LoadlistSinhVien();
             }

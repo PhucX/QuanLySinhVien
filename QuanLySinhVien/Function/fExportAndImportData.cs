@@ -69,13 +69,18 @@ namespace QuanLySinhVien
                         worksheet.Cell(1, i + 1).Value = dataGridView.Columns[i].HeaderText;
                     }
 
-                    for (int i = 0; i < dataGridView.Rows.Count; i++)
+                    if(dataGridView.Rows.Count > 1)
                     {
-                        for (int j = 0; j < dataGridView.Columns.Count; j++)
+                        MessageBox.Show(dataGridView.Rows.Count + "");
+                        for (int i = 0; i < dataGridView.Rows.Count; i++)
                         {
-                            worksheet.Cell(i + 2, j + 1).Value = dataGridView.Rows[i].Cells[j].Value.ToString();
+                            for (int j = 0; j < dataGridView.Columns.Count; j++)
+                            {
+                                worksheet.Cell(i + 2, j + 1).Value = dataGridView.Rows[i].Cells[j].Value.ToString();
+                            }
                         }
-                    }
+                    } 
+                        
                     FileInfo excelFile = new FileInfo(filePath);
                     workbook.SaveAs(filePath);
                 }

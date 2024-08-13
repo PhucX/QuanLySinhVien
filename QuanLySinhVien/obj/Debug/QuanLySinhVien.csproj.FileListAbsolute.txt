@@ -81,3 +81,4 @@ D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\QuanLySi.3CF0D20D.Up2D
 D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\ToDoList.exe
 D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\ToDoList.pdb
 D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\ToDoList.fDangKi.resources
+D:\QuanLySinhVien\QuanLySinhVien\obj\Debug\ToDoList.fDangKi.resources
