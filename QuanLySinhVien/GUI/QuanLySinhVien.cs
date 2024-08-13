@@ -30,7 +30,7 @@ namespace QuanLySinhVien
             var colNgaySinh = new DataGridViewTextBoxColumn();
             var colQueQuan = new DataGridViewTextBoxColumn();
 
-            colInputTime.HeaderText = "Thời gian nhập";
+            colInputTime.HeaderText = "THỜI GIAN NHẬP";
             colTenSV.HeaderText = "TÊN SINH VIÊN";
             colMaSV.HeaderText = "MÃ SINH VIÊN";
             colGioiTinh.HeaderText = "GIỚI TÍNH";
@@ -112,8 +112,17 @@ namespace QuanLySinhVien
                 if (MessageBox.Show("Bạn có chắc chắn xóa ?", "Cảnh báo",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    new UIRemove(new RemoveElement()).RemoveSelectedRows(dtgvSinhVien);
-                    LoadlistSinhVien();
+                    if(string.IsNullOrWhiteSpace(txbSearch.Text.Trim()))
+                    {
+                        new UIRemove(new RemoveElementByIndex()).RemoveSelectedRows(ref dtgvSinhVien);
+                        LoadlistSinhVien();
+                    }     
+                    else
+                    {
+                        new UIRemove(new RemoveElementByIndexEdit()).RemoveSelectedRows(ref dtgvSinhVien);
+                        txbSearch_TextChanged(sender, e);
+                    }
+                    
                 }
             }
         }
@@ -125,6 +134,7 @@ namespace QuanLySinhVien
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            dtgvSinhVien.MultiSelect = true;
             EnablePanel2(true, true, true, true,true);
             string TenSV = txbTenSV.Text.ToString();
             string QueQuan = txbQueQuan.Text.ToString();
@@ -154,7 +164,13 @@ namespace QuanLySinhVien
 
             if (status == "sua")
             {
-                
+                if(!string.IsNullOrWhiteSpace(txbSearch.Text.Trim()))
+                {
+                    var cellValue = dtgvSinhVien.Rows[index].Cells[0].Value;
+                    for (int i = 0; i < DanhSachSinhVien.Instance.ListSinhVien.Count; i++)
+                        if (DanhSachSinhVien.Instance.ListSinhVien[i].DInputTime.ToString() == cellValue.ToString())
+                            index = i;
+                }    
                 if (radioButton2.Checked)
                 {
                     GioiTinh = "Nam";
@@ -163,6 +179,7 @@ namespace QuanLySinhVien
                 {
                     GioiTinh = "Nữ";
                 }
+                DanhSachSinhVien.Instance.ListSinhVien[index].DInputTime = InputTime;
                 DanhSachSinhVien.Instance.ListSinhVien[index].StrMaSV = txbMaSV.Text;
                 DanhSachSinhVien.Instance.ListSinhVien[index].StrTenSV = txbTenSV.Text;
                 DanhSachSinhVien.Instance.ListSinhVien[index].DNgaySinh = dateTimePicker1.Value;
@@ -182,6 +199,7 @@ namespace QuanLySinhVien
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
+            dtgvSinhVien.MultiSelect = false;
             EnablePanel2(false, false, true, true, true);
             
            
@@ -266,18 +284,27 @@ namespace QuanLySinhVien
             }
         }
 
+        private List <SinhVien> Build()
+        {
+            if(!string.IsNullOrWhiteSpace(txbSearch.Text.Trim()))
+            {
+                SearchingInfo searching = new SearchingInfo(new SearchByName());
+
+
+                var result = searching.Search(DanhSachSinhVien.Instance.ListSinhVien, txbSearch.Text.ToLower());
+                if (result.Count == 0)
+                {
+                    searching.SetSearchStrategy(new SearchByID());
+                    result = searching.Search(DanhSachSinhVien.Instance.ListSinhVien, txbSearch.Text.ToLower());
+                }
+                return result;
+            }
+            return DanhSachSinhVien.Instance.ListSinhVien;
+        }
         private void txbSearch_TextChanged(object sender, EventArgs e)
         {
             
-            SearchingInfo searching = new SearchingInfo(new SearchByName());
-
-            var result = searching.Search(DanhSachSinhVien.Instance.ListSinhVien, txbSearch.Text.ToLower());
-            if (result.Count == 0)
-            {
-                searching.SetSearchStrategy(new SearchByID());
-                result = searching.Search(DanhSachSinhVien.Instance.ListSinhVien, txbSearch.Text.ToLower());
-            }
-            dtgvSinhVien.DataSource = result;
+              dtgvSinhVien.DataSource = Build();
         }
 
         private void fQuanLySinhVien_FormClosing(object sender, FormClosingEventArgs e)
@@ -290,8 +317,13 @@ namespace QuanLySinhVien
         {
             if (DanhSachSinhVien.Instance.ListSinhVien.Count > 0)
             {
-                List <SinhVien> sinhVien = DanhSachSinhVien.Instance.ListSinhVien;
 
+                List<SinhVien> sinhVien = DanhSachSinhVien.Instance.ListSinhVien;
+                if (!string.IsNullOrWhiteSpace(txbSearch.Text.Trim()))
+                {
+                    sinhVien = Build();
+                }    
+                
                 FilterManager filterManager = new FilterManager();
                 if(e.ColumnIndex == 0)
                 {
@@ -330,8 +362,7 @@ namespace QuanLySinhVien
                     filterManager.SortAscending(ref sinhVien);
                      sort_order = 1;
                     }
-                DanhSachSinhVien.Instance.ListSinhVien = sinhVien;
-                LoadlistSinhVien();
+               dtgvSinhVien.DataSource = sinhVien;
             }
             else
                 MessageBox.Show("Không có dữ liệu", "Cảnh báo");
