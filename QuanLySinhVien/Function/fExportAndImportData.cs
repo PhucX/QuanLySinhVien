@@ -71,7 +71,6 @@ namespace QuanLySinhVien
 
                     if(dataGridView.Rows.Count > 1)
                     {
-                        MessageBox.Show(dataGridView.Rows.Count + "");
                         for (int i = 0; i < dataGridView.Rows.Count; i++)
                         {
                             for (int j = 0; j < dataGridView.Columns.Count; j++)
