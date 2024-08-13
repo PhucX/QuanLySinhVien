@@ -8,9 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System.IO;
 
 namespace QuanLySinhVien
 {
@@ -52,8 +55,6 @@ namespace QuanLySinhVien
 
             dtgvSinhVien.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-
-
             dtgvSinhVien.Columns.AddRange(new DataGridViewColumn[] { colInputTime, colMaSV, colTenSV, colGioiTinh, colNgaySinh, colQueQuan });
         }
         void LoadlistSinhVien()
@@ -68,6 +69,13 @@ namespace QuanLySinhVien
         public fQuanLySinhVien()
         {
             InitializeComponent();
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"data.xlsx");
+
+            if (File.Exists(filePath))
+            {
+                new DataManager(new ExcelImporter()).ImportData(filePath);
+                LoadlistSinhVien();
+            }
         }
         void EnablePanel2(bool them, bool xoa, bool sua, bool luu, bool huy)
         {
@@ -103,7 +111,7 @@ namespace QuanLySinhVien
                 if (MessageBox.Show("Bạn có chắc chắn xóa ?", "Cảnh báo",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    new fRemoveElement().removeElement(dtgvSinhVien);
+                    new UIRemove(new RemoveElement()).RemoveSelectedRows(dtgvSinhVien);
                     LoadlistSinhVien();
                 }
             }
@@ -238,7 +246,8 @@ namespace QuanLySinhVien
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                new fExportAndImportData().ExportData(dtgvSinhVien, saveFileDialog.FileName);
+                string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"data.xlsx");
+                new DataManager(new ExcelExporter()).ExportData(dtgvSinhVien, saveFileDialog.FileName);
             }
         }
 
@@ -252,41 +261,75 @@ namespace QuanLySinhVien
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                new fExportAndImportData().ImportData(openFileDialog.FileName);
+                new DataManager(new ExcelImporter()).ImportData(openFileDialog.FileName);
                 LoadlistSinhVien();
             }
         }
 
         private void txbSearch_TextChanged(object sender, EventArgs e)
         {
-            new fSearching().searchingInfo(ref dtgvSinhVien, txbSearch.Text.ToLower());
+            
+            SearchingInfo searching = new SearchingInfo(new SearchByName());
+
+            var result = searching.Search(DanhSachSinhVien.Instance.ListSinhVien, txbSearch.Text.ToLower());
+            if (result.Count == 0)
+            {
+                searching.SetSearchStrategy(new SearchByID());
+                result = searching.Search(DanhSachSinhVien.Instance.ListSinhVien, txbSearch.Text.ToLower());
+            }
+            dtgvSinhVien.DataSource = result;
+        }
+
+        private void fQuanLySinhVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"data.xlsx");
+            new DataManager(new ExcelExporter()).ExportData(dtgvSinhVien, filePath);
         }
 
         public void dtgvSinhVien_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (DanhSachSinhVien.Instance.ListSinhVien.Count > 0)
             {
-                fFilter filterData = new fFilter();
-                if (e.ColumnIndex == 0)
-                    DanhSachSinhVien.Instance.ListSinhVien = DanhSachSinhVien.Instance.ListSinhVien.OrderBy(time => time.DInputTime).ToList();
+                List <SinhVien> sinhVien = DanhSachSinhVien.Instance.ListSinhVien;
+                FilterManager filterManager = new FilterManager();
+                if(e.ColumnIndex == 0)
+                {
+                    filterManager.SetFilterManager(new SortByInputTime());
+                }
+                else if(e.ColumnIndex == 1)
+                {
+                    filterManager.SetFilterManager(new SortByID());
+                }
+                else if(e.ColumnIndex == 2)
+                {
+                    filterManager.SetFilterManager(new SortByName());
+                }
+                else if (e.ColumnIndex == 3)
+                {
+                    filterManager.SetFilterManager(new SortByGender());
+                }
+                else if(e.ColumnIndex == 4)
+                {
+                    filterManager.SetFilterManager(new SortByBirthday());
+                }
+
+                if (sort_order == 1)
+                {
+                    filterManager.SortAscending(ref sinhVien);
+                    sort_order = 2;
+                }
+                else if(sort_order == 2)
+                {
+                    filterManager.SortDescending(ref sinhVien);
+                    sort_order = 0;
+                }
                 else
                 {
-                    if (sort_order == 1)
-                    {
-                        filterData.Sorted_Increase(sender, e);
-                        sort_order = 2;
-                    }
-                    else if (sort_order == 2)
-                    {
-                        filterData.Sorted_Decrease(sender, e);
-                        sort_order = 0;
-                    }
-                    else if (sort_order == 0)
-                    {
-                        sort_order = 1;
-                        DanhSachSinhVien.Instance.ListSinhVien = DanhSachSinhVien.Instance.ListSinhVien.OrderBy(time => time.DInputTime).ToList();
-                    }
+                    filterManager.SetFilterManager(new SortByInputTime());
+                    filterManager.SortAscending(ref sinhVien);
+                    sort_order = 1;
                 }
+                DanhSachSinhVien.Instance.ListSinhVien = sinhVien;
                 LoadlistSinhVien();
             }
             else

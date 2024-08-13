@@ -199,7 +199,7 @@
             this.panel1.Controls.Add(this.txbMaSV);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1034, 511);
@@ -317,7 +317,7 @@
             this.hệThốngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1034, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1034, 28);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -328,7 +328,7 @@
             this.xuấtDữLiệuToolStripMenuItem,
             this.thoátToolStripMenuItem});
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.hệThốngToolStripMenuItem.Text = "Hệ thống ";
             // 
             // thêmDữLiệuToolStripMenuItem
@@ -370,6 +370,7 @@
             this.MaximizeBox = false;
             this.Name = "fQuanLySinhVien";
             this.Text = "Quản Lý Sinh Viên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fQuanLySinhVien_FormClosing);
             this.Load += new System.EventHandler(this.fQuanLySinhVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

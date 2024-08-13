@@ -5,12 +5,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace QuanLySinhVien
 {
-    public class fExportAndImportData
+    public interface IImporter
     {
-        public void ExportData(DataGridView dataGridView, string filePath)
+        void Import(string filePath);
+    }
+
+    public class ExcelImporter : IImporter
+    {
+        public void Import(string filePath)
+        {
+            try
+            {
+                using (XLWorkbook workbook = new XLWorkbook(filePath))
+                {
+                    IXLWorksheet worksheet = workbook.Worksheet(1);
+
+                    foreach (IXLRow row in worksheet.RowsUsed().Skip(1))
+                    {
+                        DateTime InputTime;
+                        bool isDateTime = DateTime.TryParse(row.Cell(1).Value.ToString(), out InputTime);
+                        if (!isDateTime)
+                            InputTime = DateTime.Now;
+                        else InputTime = DateTime.Parse(row.Cell(1).Value.ToString());
+
+                        DanhSachSinhVien.Instance.ListSinhVien
+                            .Add(new SinhVien(InputTime,
+                                                row.Cell(2).Value.ToString(),
+                                                row.Cell(3).Value.ToString(),
+                                                row.Cell(4).Value.ToString(),
+                                                DateTime.Parse(row.Cell(5).Value.ToString()),
+                                                row.Cell(6).Value.ToString()));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+
+    public interface IExporter
+    {
+        void Export(DataGridView dataGridView, string filePath);
+    }
+
+    public class ExcelExporter : IExporter
+    {
+        public void Export(DataGridView dataGridView, string filePath)
         {
             try
             {
@@ -30,7 +76,7 @@ namespace QuanLySinhVien
                             worksheet.Cell(i + 2, j + 1).Value = dataGridView.Rows[i].Cells[j].Value.ToString();
                         }
                     }
-
+                    FileInfo excelFile = new FileInfo(filePath);
                     workbook.SaveAs(filePath);
                 }
 
@@ -41,37 +87,29 @@ namespace QuanLySinhVien
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+    }
+    public class DataManager
+    {
+        private IImporter _importer;
+        private IExporter _exporter;
+
+        public DataManager(IImporter importer)
+        {
+            _importer = importer;
+        }
+
+        public DataManager(IExporter exporter)
+        {
+            _exporter = exporter;
+        }
+        public void ExportData(DataGridView dataGridView, string filePath)
+        {
+            _exporter.Export(dataGridView, filePath);
+        }
 
         public void ImportData(string filePath)
         {
-            try
-            {
-                using (XLWorkbook workbook = new XLWorkbook(filePath))
-                {
-                    IXLWorksheet worksheet = workbook.Worksheet(1);
-
-                    foreach (IXLRow row in worksheet.RowsUsed().Skip(1))
-                    {
-                        DateTime InputTime;
-                        bool isDateTime = DateTime.TryParse(row.Cell(1).Value.ToString(), out InputTime);
-                        if (!isDateTime)
-                            InputTime = DateTime.Now;
-                        else InputTime = DateTime.Parse(row.Cell(1).Value.ToString());
-
-                        DanhSachSinhVien.Instance.ListSinhVien.Add(new SinhVien(
-                                                                       InputTime,
-                                                                       row.Cell(2).Value.ToString(),
-                                                                       row.Cell(3).Value.ToString(),
-                                                                       row.Cell(4).Value.ToString(),
-                                                                       DateTime.Parse(row.Cell(5).Value.ToString()),
-                                                                       row.Cell(6).Value.ToString()));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            _importer.Import(filePath);
         }
     }
 }

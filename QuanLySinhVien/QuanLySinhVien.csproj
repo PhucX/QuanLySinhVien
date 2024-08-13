@@ -146,10 +146,9 @@
     <Compile Include="Function\fCheckedFormat.cs" />
     <Compile Include="Function\fExportAndImportData.cs" />
     <Compile Include="Class\DanhSachSinhVien.cs" />
-    <Compile Include="DanhSachSinhVienHelpers.cs" />
-    <Compile Include="Function\fRemoveElement.cs" />
-    <Compile Include="Function\fFilter.cs" />
-    <Compile Include="Function\fSearching.cs" />
+    <Compile Include="Function\RemoveElement.cs" />
+    <Compile Include="Function\FilterManager.cs" />
+    <Compile Include="Function\SearchingInfo.cs" />
     <Compile Include="GUI\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
