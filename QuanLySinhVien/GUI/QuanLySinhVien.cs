@@ -284,27 +284,18 @@ namespace QuanLySinhVien
             }
         }
 
-        private List <SinhVien> Build()
-        {
-            if(!string.IsNullOrWhiteSpace(txbSearch.Text.Trim()))
-            {
-                SearchingInfo searching = new SearchingInfo(new SearchByName());
-
-
-                var result = searching.Search(DanhSachSinhVien.Instance.ListSinhVien, txbSearch.Text.ToLower());
-                if (result.Count == 0)
-                {
-                    searching.SetSearchStrategy(new SearchByID());
-                    result = searching.Search(DanhSachSinhVien.Instance.ListSinhVien, txbSearch.Text.ToLower());
-                }
-                return result;
-            }
-            return DanhSachSinhVien.Instance.ListSinhVien;
-        }
         private void txbSearch_TextChanged(object sender, EventArgs e)
         {
-            
-              dtgvSinhVien.DataSource = Build();
+            SearchingInfo searching = new SearchingInfo(new SearchByName());
+
+
+            var result = searching.Search(DanhSachSinhVien.Instance.ListSinhVien, txbSearch.Text.ToLower());
+            if (result.Count == 0)
+            {
+                searching.SetSearchStrategy(new SearchByID());
+                result = searching.Search(DanhSachSinhVien.Instance.ListSinhVien, txbSearch.Text.ToLower());
+            }
+            dtgvSinhVien.DataSource = result;
         }
 
         private void fQuanLySinhVien_FormClosing(object sender, FormClosingEventArgs e)
@@ -315,14 +306,10 @@ namespace QuanLySinhVien
 
         public void dtgvSinhVien_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (DanhSachSinhVien.Instance.ListSinhVien.Count > 0)
+            if (DanhSachSinhVien.Instance.ListSinhVien.Count > 0 && string.IsNullOrWhiteSpace(txbSearch.Text.Trim()))
             {
 
-                List<SinhVien> sinhVien = DanhSachSinhVien.Instance.ListSinhVien;
-                if (!string.IsNullOrWhiteSpace(txbSearch.Text.Trim()))
-                {
-                    sinhVien = Build();
-                }    
+                List<SinhVien> sinhVien = DanhSachSinhVien.Instance.ListSinhVien;  
                 
                 FilterManager filterManager = new FilterManager();
                 if(e.ColumnIndex == 0)
@@ -362,10 +349,10 @@ namespace QuanLySinhVien
                     filterManager.SortAscending(ref sinhVien);
                      sort_order = 1;
                     }
-               dtgvSinhVien.DataSource = sinhVien;
+
+                DanhSachSinhVien.Instance.ListSinhVien = sinhVien;
+                LoadlistSinhVien();
             }
-            else
-                MessageBox.Show("Không có dữ liệu", "Cảnh báo");
         }
     }
             #endregion
