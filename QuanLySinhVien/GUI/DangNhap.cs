@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
+using ToDoList;
 
 namespace QuanLySinhVien
 {
@@ -16,31 +19,34 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
         }
-
+        int oke = 1;
         private void bntDangNhap_Click(object sender, EventArgs e)
         {
-            if (txbMatKhau.Text != "123456" || txbTaiKhoan.Text != "nhom13")
+            
+            for (int i = 0; i < DanhSachTaiKhoan.Instance.ListTaiKhoan.Count; i++)
+            {
+                if (txbMatKhau.Text == DanhSachTaiKhoan.Instance.ListTaiKhoan[i].Pass   &&  txbTaiKhoan.Text == DanhSachTaiKhoan.Instance.ListTaiKhoan[i].Name )
+                {
+                    oke = 0;
+                    this.Hide();
+                    new fQuanLySinhVien().ShowDialog();
+                    this.Close();
+                }
+            }
+            if (oke == 1)
             {
                 MessageBox.Show("Tài khoản hay mật khẩu không hợp lệ" +
-                " !","Cảnh báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-            else
-            {
-                MessageBox.Show("Đăng nhập thành công" + " ! ", "Confirm", MessageBoxButtons.OK, MessageBoxIcon.None);
-                this.Hide();
-                new fQuanLySinhVien().ShowDialog();
-                this.Close();
+                   " !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void fDangNhap_Load(object sender, EventArgs e)
+        private void llbDangKi_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            this.Hide();
+            new fDangKi().ShowDialog();
+            this.Close();
         }
 
-        private void txbTaiKhoan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -8,12 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Input;
 using ClosedXML.Excel;
-using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml.Wordprocessing;
-using System.IO;
 
 namespace QuanLySinhVien
 {
@@ -55,6 +52,8 @@ namespace QuanLySinhVien
 
             dtgvSinhVien.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+
+
             dtgvSinhVien.Columns.AddRange(new DataGridViewColumn[] { colInputTime, colMaSV, colTenSV, colGioiTinh, colNgaySinh, colQueQuan });
         }
         void LoadlistSinhVien()
@@ -69,13 +68,6 @@ namespace QuanLySinhVien
         public fQuanLySinhVien()
         {
             InitializeComponent();
-            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"data.xlsx");
-
-            if (File.Exists(filePath))
-            {
-                new DataManager(new ExcelImporter()).ImportData(filePath);
-                LoadlistSinhVien();
-            }
         }
         void EnablePanel2(bool them, bool xoa, bool sua, bool luu, bool huy)
         {
@@ -261,7 +253,6 @@ namespace QuanLySinhVien
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                new DataManager(new ExcelImporter()).ImportData(openFileDialog.FileName);
                 LoadlistSinhVien();
             }
         }
@@ -313,21 +304,23 @@ namespace QuanLySinhVien
                     filterManager.SetFilterManager(new SortByBirthday());
                 }
 
-                if (sort_order == 1)
-                {
+                    if (sort_order == 1)
+                    {
                     filterManager.SortAscending(ref sinhVien);
-                    sort_order = 2;
-                }
+                        sort_order = 2;
+                    }
                 else if(sort_order == 2)
-                {
+                    {
                     filterManager.SortDescending(ref sinhVien);
-                    sort_order = 0;
-                }
+                        sort_order = 0;
+                    }
                 else
-                {
+                    {
                     filterManager.SetFilterManager(new SortByInputTime());
                     filterManager.SortAscending(ref sinhVien);
-                    sort_order = 1;
+                        sort_order = 1;
+                        DanhSachSinhVien.Instance.ListSinhVien = DanhSachSinhVien.Instance.ListSinhVien.OrderBy(time => time.DInputTime).ToList();
+                    }
                 }
                 DanhSachSinhVien.Instance.ListSinhVien = sinhVien;
                 LoadlistSinhVien();

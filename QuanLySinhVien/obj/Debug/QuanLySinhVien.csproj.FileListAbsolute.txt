@@ -39,44 +39,45 @@ D:\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.CoreCompileInpu
 D:\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySi.3CF0D20D.Up2Date
 D:\QuanLySinhVien\QuanLySinhVien\obj\Debug\ToDoList.exe
 D:\QuanLySinhVien\QuanLySinhVien\obj\Debug\ToDoList.pdb
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\ToDoList.exe.config
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\ToDoList.exe
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\ToDoList.pdb
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\ClosedXML.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\DocumentFormat.OpenXml.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\EPPlus.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\EPPlus.Interfaces.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\EPPlus.System.Drawing.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\ExcelNumberFormat.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\Irony.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\Microsoft.Bcl.HashCode.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\SixLabors.Fonts.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\System.Buffers.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\System.ComponentModel.Annotations.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\System.IO.Packaging.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\System.Memory.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\System.Numerics.Vectors.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\XLParser.dll
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\ClosedXML.xml
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\DocumentFormat.OpenXml.xml
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\EPPlus.xml
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\ExcelNumberFormat.xml
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\Microsoft.Bcl.HashCode.xml
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\SixLabors.Fonts.xml
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\System.Buffers.xml
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\System.IO.Packaging.xml
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\System.Memory.xml
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\System.Numerics.Vectors.xml
-D:\CodeC#\miniproject\QuanLySinhVien\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\CodeC#\miniproject\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.AssemblyReference.cache
-D:\CodeC#\miniproject\QuanLySinhVien\obj\Debug\QuanLySinhVien.fDangNhap.resources
-D:\CodeC#\miniproject\QuanLySinhVien\obj\Debug\QuanLySinhVien.fQuanLySinhVien.resources
-D:\CodeC#\miniproject\QuanLySinhVien\obj\Debug\ToDoList.Properties.Resources.resources
-D:\CodeC#\miniproject\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.GenerateResource.cache
-D:\CodeC#\miniproject\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.CoreCompileInputs.cache
-D:\CodeC#\miniproject\QuanLySinhVien\obj\Debug\QuanLySi.3CF0D20D.Up2Date
-D:\CodeC#\miniproject\QuanLySinhVien\obj\Debug\ToDoList.exe
-D:\CodeC#\miniproject\QuanLySinhVien\obj\Debug\ToDoList.pdb
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\ToDoList.exe.config
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\ToDoList.exe
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\ToDoList.pdb
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\ClosedXML.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\EPPlus.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\EPPlus.Interfaces.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\EPPlus.System.Drawing.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\ExcelNumberFormat.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\Irony.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\SixLabors.Fonts.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\System.Buffers.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\System.IO.Packaging.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\System.Memory.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\System.Numerics.Vectors.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\XLParser.dll
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\ClosedXML.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\EPPlus.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\ExcelNumberFormat.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\SixLabors.Fonts.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\System.Buffers.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\System.IO.Packaging.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\System.Memory.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\System.Numerics.Vectors.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.AssemblyReference.cache
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\QuanLySinhVien.fDangNhap.resources
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\QuanLySinhVien.fQuanLySinhVien.resources
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\ToDoList.Properties.Resources.resources
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.GenerateResource.cache
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.CoreCompileInputs.cache
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\QuanLySi.3CF0D20D.Up2Date
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\ToDoList.exe
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\ToDoList.pdb
+D:\Lap_Trinh\C#\summer code camp\QuanLySinhVien\obj\Debug\ToDoList.fDangKi.resources
