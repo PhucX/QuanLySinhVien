@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "D:\\QuanLySinhVien\\QuanLySinhVien\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|d:\\quanlysinhvien\\quanlysinhvien\\gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|d:\\quanlysinhvien\\quanlysinhvien\\class\\sinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:class\\sinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|d:\\quanlysinhvien\\quanlysinhvien\\class\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:class\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|d:\\quanlysinhvien\\quanlysinhvien\\gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:gui\\quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|d:\\quanlysinhvien\\quanlysinhvien\\function\\filtermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:function\\filtermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|d:\\quanlysinhvien\\quanlysinhvien\\function\\searchinginfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57BB10F4-6EF1-4EC1-BB9F-BDE047D1A42D}|QuanLySinhVien.csproj|solutionrelative:function\\searchinginfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,13 +70,77 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaiKhoan.cs",
+              "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\Class\\TaiKhoan.cs",
+              "RelativeDocumentMoniker": "Class\\TaiKhoan.cs",
+              "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\Class\\TaiKhoan.cs",
+              "RelativeToolTip": "Class\\TaiKhoan.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T07:48:05.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "QuanLySinhVien.cs",
+              "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs",
+              "RelativeDocumentMoniker": "GUI\\QuanLySinhVien.cs",
+              "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs",
+              "RelativeToolTip": "GUI\\QuanLySinhVien.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAmwEMAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T07:45:10.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "QuanLySinhVien.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs",
+              "RelativeDocumentMoniker": "GUI\\QuanLySinhVien.cs",
+              "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\GUI\\QuanLySinhVien.cs [Design]",
+              "RelativeToolTip": "GUI\\QuanLySinhVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T07:45:08.949Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FilterManager.cs",
+              "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\Function\\FilterManager.cs",
+              "RelativeDocumentMoniker": "Function\\FilterManager.cs",
+              "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\Function\\FilterManager.cs",
+              "RelativeToolTip": "Function\\FilterManager.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T07:41:24.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SearchingInfo.cs",
+              "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\Function\\SearchingInfo.cs",
+              "RelativeDocumentMoniker": "Function\\SearchingInfo.cs",
+              "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\Function\\SearchingInfo.cs",
+              "RelativeToolTip": "Function\\SearchingInfo.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T07:39:56.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "SinhVien.cs",
               "DocumentMoniker": "D:\\QuanLySinhVien\\QuanLySinhVien\\Class\\SinhVien.cs",
               "RelativeDocumentMoniker": "Class\\SinhVien.cs",
               "ToolTip": "D:\\QuanLySinhVien\\QuanLySinhVien\\Class\\SinhVien.cs",
               "RelativeToolTip": "Class\\SinhVien.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAJAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAA5wCIAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-13T06:38:39.736Z",
               "EditorCaption": ""

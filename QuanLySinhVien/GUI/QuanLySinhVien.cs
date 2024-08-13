@@ -63,7 +63,8 @@ namespace QuanLySinhVien
             dtgvSinhVien.Rows.Clear();
             dtgvSinhVien.Columns.Clear();
             CreateForColumnDataGridView();
-            dtgvSinhVien.DataSource = DanhSachSinhVien.Instance.ListSinhVien;
+            if(DanhSachSinhVien.Instance.ListSinhVien.Count > 0)
+                dtgvSinhVien.DataSource = DanhSachSinhVien.Instance.ListSinhVien;
             dtgvSinhVien.Refresh();
         }
         public fQuanLySinhVien()
